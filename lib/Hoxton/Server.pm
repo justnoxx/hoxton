@@ -143,7 +143,7 @@ sub _accept_handler {
 
         my $peer_port = $client_data->{port};
         my $peer_host = $client_data->{host};
-        warn "$sock Accepted connection from $peer_host:$peer_port\n";
+        # warn "Accepted connection from $peer_host:$peer_port\n";
         # DEBUG && warn "$sock Accepted connection from $peer_host:$peer_port\n";
         return unless $sock;
         $self->{exit_guard}->begin;
