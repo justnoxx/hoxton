@@ -1,0 +1,27 @@
+#!/usr/bin/env perl
+use strict;
+use Plack::Runner;
+
+sub version {
+    require Hoxton;
+    print "Hoxton $Twiggy::VERSION\n";
+}
+
+my $runner = Plack::Runner->new(server => 'Hoxton', env => 'deployment', version_cb => \&version);
+$runner->parse_options(@ARGV);
+$runner->run;
+
+__END__
+
+=head1 NAME
+
+hoxton - Hoxton launcher
+
+=head1 SYNOPSIS
+
+  hoxton --port 8080 app.psgi
+
+
+(C) @miyagawa
+
+=cut
